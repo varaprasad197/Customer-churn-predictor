@@ -57,41 +57,10 @@ def engineer_features(df, median_charge, tenure_max):
 def load_default_dataset():
     """Load built-in telecom dataset"""
     # Using sklearn's sample data - create a telecom-like dataset
-    url = "https://raw.githubusercontent.com/IBM/telco-customer-churn/main/data/WA_Fn-UseC_-Telco-Customer-Churn.csv"
+    url = "https://raw.githubusercontent.com/varaprasad197/Customer-churn-predictor/main/tele-comm.csv"
     try:
         df = pd.read_csv(url)
         return df
-    except:
-        # Fallback: create synthetic dataset
-        st.warning("Could not load online dataset. Using synthetic data for demo.")
-        np.random.seed(42)
-        n = 1000
-        return pd.DataFrame({
-            'customerID': [f'CUST_{i:05d}' for i in range(n)],
-            'gender': np.random.choice(['Male', 'Female'], n),
-            'SeniorCitizen': np.random.choice([0, 1], n, p=[0.8, 0.2]),
-            'Partner': np.random.choice(['Yes', 'No'], n, p=[0.5, 0.5]),
-            'Dependents': np.random.choice(['Yes', 'No'], n, p=[0.3, 0.7]),
-            'tenure': np.random.randint(0, 73, n),
-            'PhoneService': np.random.choice(['Yes', 'No'], n),
-            'MultipleLines': np.random.choice(['Yes', 'No', 'No phone service'], n),
-            'InternetService': np.random.choice(['DSL', 'Fiber optic', 'No'], n),
-            'OnlineSecurity': np.random.choice(['Yes', 'No', 'No internet service'], n),
-            'OnlineBackup': np.random.choice(['Yes', 'No', 'No internet service'], n),
-            'DeviceProtection': np.random.choice(['Yes', 'No', 'No internet service'], n),
-            'TechSupport': np.random.choice(['Yes', 'No', 'No internet service'], n),
-            'StreamingTV': np.random.choice(['Yes', 'No', 'No internet service'], n),
-            'StreamingMovies': np.random.choice(['Yes', 'No', 'No internet service'], n),
-            'Contract': np.random.choice(['Month-to-month', 'One year', 'Two year'], n),
-            'PaperlessBilling': np.random.choice(['Yes', 'No'], n),
-            'PaymentMethod': np.random.choice(['Electronic check', 'Mailed check', 
-                                               'Bank transfer (automatic)', 
-                                               'Credit card (automatic)'], n),
-            'MonthlyCharges': np.random.uniform(20, 150, n),
-            'TotalCharges': np.random.uniform(100, 8000, n),
-            'Churn': np.random.choice(['Yes', 'No'], n, p=[0.27, 0.73])
-        })
-
 # ─── Cache: load + train ────────────────────────────────────────────────────────
 @st.cache_resource
 def load_and_train():
