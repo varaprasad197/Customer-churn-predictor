@@ -58,11 +58,11 @@ def load_default_dataset():
     """Load built-in telecom dataset"""
     # Using sklearn's sample data - create a telecom-like dataset
     url = "https://raw.githubusercontent.com/varaprasad197/Customer-churn-predictor/main/tele-comm.csv"
-    try:
-        df = pd.read_csv(url)
-        return df
+    
+    df = pd.read_csv(url)
+    return df
 # ─── Cache: load + train ────────────────────────────────────────────────────────
-@st.cache_resource
+
 def load_and_train():
     df = load_default_dataset()
 
