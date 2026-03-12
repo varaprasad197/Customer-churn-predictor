@@ -2,7 +2,7 @@
 
 An interactive Streamlit web app that predicts telecom customer churn using Logistic Regression with a full ML pipeline.
 
-🔗 **[Live Demo](https://your-app-name.streamlit.app)** ← *(update after deployment)*
+🔗 **[Live Demo](https://your-app-name.streamlit.app)**
 
 ---
 
