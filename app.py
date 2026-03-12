@@ -306,7 +306,7 @@ with tab3:
     colors = ['#e74c3c' if x > 0 else '#3498db' for x in feat_imp_df['Coefficient']]
     ax.barh(feat_imp_df['Feature'], feat_imp_df['Coefficient'], color=colors, alpha=0.7, edgecolor='black')
     ax.axvline(0, color='black', linestyle='-', linewidth=0.8)
-    ax.set_title('Feature Coefficients (L1 Selected)', fontweight='bold', fontsize=12,
+    ax.set_title('Feature Coefficients (L1 Selected)', fontweight='bold',
                  fontsize=12)
     ax.set_xlabel('Coefficient Value')
     plt.tight_layout()
