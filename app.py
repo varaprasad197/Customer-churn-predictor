@@ -237,7 +237,7 @@ with st.spinner("🔄 Initializing model..."):
     model_artifacts = train_model(df)
 
 st.sidebar.title("🎯 Navigation")
-page = st.sidebar.radio("", ["🏠 Dashboard", "🎯 Make Prediction", "📈 Performance", "📊 Analytics"])
+page = st.sidebar.radio("", ["🎯 Make Prediction","🏠 Dashboard",  "📈 Performance", "📊 Analytics"])
 
 # ============================================================================
 # PAGE: DASHBOARD (HOME)
