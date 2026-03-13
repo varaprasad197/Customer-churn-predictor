@@ -237,7 +237,7 @@ with st.spinner("🔄 Initializing model..."):
     model_artifacts = train_model(df)
 
 st.sidebar.title("🎯 Navigation")
-page = st.sidebar.radio("", ["🎯 Make Prediction","🏠 Dashboard",  "📈 Performance", "📊 Analytics"])
+page = st.sidebar.radio("", ["🏠 Dashboard","🎯 Make Prediction",  "📈 Model-Performance", "📊 About-Dataset"])
 
 # ============================================================================
 # PAGE: DASHBOARD (HOME)
@@ -418,7 +418,7 @@ elif page == "🎯 Make Prediction":
 # ============================================================================
 # PAGE: MODEL PERFORMANCE
 # ============================================================================
-elif page == "📈 Performance":
+elif page == "📈 Model-Performance":
     st.markdown("<h2 class='section-header'>📈 Model Performance Metrics</h2>", unsafe_allow_html=True)
     
     st.info("✅ These are your ACTUAL metrics from your notebook (not inflated)")
@@ -480,7 +480,7 @@ elif page == "📈 Performance":
 # ============================================================================
 # PAGE: ANALYTICS
 # ============================================================================
-elif page == "📊 Analytics":
+elif page == "📊 About-Dataset":
     st.markdown("<h2 class='section-header'>📊 Customer Data Analytics</h2>", unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns(3)
