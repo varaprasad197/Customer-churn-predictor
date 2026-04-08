@@ -272,8 +272,7 @@ with st.sidebar:
         if uploaded:
             df_raw = load_data(uploaded)
     else:
-        default_url = ("https://raw.githubusercontent.com/varaprasad197/"
-                       "Customer-churn-predictor/main/tele_comm.csv")
+        default_url = ("https://github.com/varaprasad197/Customer-churn-predictor/blob/main/tele_comm.csv")
         url = st.text_input("CSV URL", value=default_url)
         if st.button("🚀 Load & Train", use_container_width=True):
             with st.spinner("Fetching dataset …"):
