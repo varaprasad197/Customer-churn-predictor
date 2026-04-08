@@ -97,7 +97,7 @@ hr {border-color:#2a3050 !important;}
 
 @st.cache_data(show_spinner=False)
 def load_data(path: str) -> pd.DataFrame:
-    df = pd.read_csv(path)
+    df = pd.read_csv(path,sep=',')
     df["TotalCharges"] = pd.to_numeric(df["TotalCharges"], errors="coerce")
     df.loc[df["tenure"] == 0, "TotalCharges"] = 0
     df.drop(columns=["customerID"], inplace=True, errors="ignore")
